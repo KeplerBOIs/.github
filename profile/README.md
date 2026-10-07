@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="BOI_logo.png" alt="BOIs: Bonus Objects of Interest mission patch" width="260">
-</p>
-
 # Here Come the BOIs 🔭
 
 **Comprehensive exoplanet demographics with the Kepler-Bonus light curves**
