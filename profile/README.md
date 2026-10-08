@@ -11,6 +11,15 @@ This organization hosts the software and data products of a NASA Exoplanets Rese
 
 Our proof of concept, **BOI-1.01**, is a sub-Neptune candidate. Its G = 17.8 host is fainter than any known KOI and lies less than 3 pixels from a saturated Kepler target.
 
+## Quick Navigation
+
+| Resource | Description | Link |
+| :--- | :--- | :--- |
+| **Project Board** | Active task tracking, assignments, and pipeline milestones | [View Project Board](https://github.com/orgs/KeplerBOIs/projects) |
+| **Organization Wiki** | Central documentation, data-access guides, and meeting notes | [Open Master Wiki](https://github.com/KeplerBOIs/.github/wiki) |
+| **`preconditioning` Repo** | Source code, issues, and PCA detrending routines | [Go to Repository](https://github.com/KeplerBOIs/preconditioning) |
+| **`preconditioning` Wiki** | Pipeline-specific mathematical notes and benchmarks | [Preconditioning Wiki](https://github.com/KeplerBOIs/preconditioning/wiki) |
+
 ## Planned products
 
 | | Product | Section |
