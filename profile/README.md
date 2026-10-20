@@ -73,7 +73,7 @@ flowchart LR
 
 ## Open science
 
-* All software is MIT licensed, developed in the open on GitHub, and released on PyPI where it makes sense.
+* All software is licensed under the GNU GPL v3.0 (GPL-3.0), developed on GitHub, and released on PyPI where it makes sense.
 * The exact software version behind each paper is archived on **Zenodo** with a DOI.
 * Catalogs are released as **Parquet** and as journal machine-readable tables. Period posteriors and other supplementary products are released as CSV on Zenodo.
 * Papers will be published open access.
