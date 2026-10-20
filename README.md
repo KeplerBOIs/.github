@@ -14,21 +14,33 @@ This repo (`KeplerBOIs/.github`) holds the setup script and this guide;
 ## Layout
 
 ```
-BOIs/                        the workspace (any name, not itself a git repo)
-├── .venv/                   the shared environment
-├── .github/                 this repo: setup_workspace.sh and this guide
-├── kbonus-data/             reading and indexing KBonus-BKG light curves
-├── preconditioning/         detrending (systematics basis vectors)
-├── injections/              completeness and reliability tests
-├── Kepler-BOI1b/            the BOI-1b analysis (standalone result)
-└── bls_cuda/                pytfit5: TransitFit5 and BLS (jasonfrowe/bls_cuda)
+BOIs/                          the workspace (any name, not itself a git repo)
+├── .venv/                     the shared environment
+├── .github/                   this repo: setup_workspace.sh and this guide
+├── kbonus-data/               reading and indexing KBonus-BKG light curves
+├── stellar-characterization/  stellar parameters for every star
+├── preconditioning/           detrending (systematics basis vectors)
+├── transit-search/            matched-filter, BLS and single-event searches
+├── transit-vetting/           flux- and pixel-level vetting
+├── transit-modelling/         transit fits and posteriors
+├── injections/                completeness and reliability tests
+├── exoplanet-catalogues/      the BOI and long-period catalogues
+├── demographics/              occurrence rates
+├── Kepler-BOI1b/              the BOI-1b analysis (standalone result)
+└── bls_cuda/                  pytfit5: TransitFit5 and BLS (jasonfrowe/bls_cuda)
 ```
 
 | repo | installed as | import |
 |---|---|---|
 | [kbonus-data](https://github.com/KeplerBOIs/kbonus-data) | `kbonus-data` | `kbonus_data` |
+| [stellar-characterization](https://github.com/KeplerBOIs/stellar-characterization) | `boi-stellar` | `boi_stellar` |
 | [preconditioning](https://github.com/KeplerBOIs/preconditioning) | `preconditioning` (dependencies only so far) | |
+| [transit-search](https://github.com/KeplerBOIs/transit-search) | `boi-search` | `boi_search` |
+| [transit-vetting](https://github.com/KeplerBOIs/transit-vetting) | `boi-vetting` | `boi_vetting` |
+| [transit-modelling](https://github.com/KeplerBOIs/transit-modelling) | `boi-modelling` | `boi_modelling` |
 | [injections](https://github.com/KeplerBOIs/injections) | `boi-injections` | `boi_injections` |
+| [exoplanet-catalogues](https://github.com/KeplerBOIs/exoplanet-catalogues) | `boi-catalogues` | `boi_catalogues` |
+| [demographics](https://github.com/KeplerBOIs/demographics) | `boi-demographics` | `boi_demographics` |
 | [bls_cuda](https://github.com/jasonfrowe/bls_cuda) | `pytfit5` | `pytfit5` |
 | [Kepler-BOI1b](https://github.com/KeplerBOIs/Kepler-BOI1b) | not installed; a notebook | |
 
@@ -38,7 +50,7 @@ data directory found through `KBONUS_DATA_DIR` (see below).
 ## Setting up
 
 You need Python 3.10 or newer, git, and access to the KeplerBOIs repos
-(preconditioning and injections are private). The simplest way to give git
+(all but kbonus-data, Kepler-BOI1b and this one are private). The simplest way to give git
 your GitHub access is the [GitHub CLI](https://cli.github.com/):
 
 ```sh
@@ -58,8 +70,8 @@ The script:
 
 1. clones each repo that is not there yet (existing clones are left alone);
 2. creates `.venv` (with `python3`; set `PYTHON=python3.12` to choose another);
-3. installs bls_cuda, kbonus-data, preconditioning and injections editable
-   (`pip install -e`), plus `ipykernel`, `matplotlib`, `exotic-ld`, `h5py`
+3. installs every repo with a `pyproject.toml` editable (`pip install -e`),
+   plus `ipykernel`, `matplotlib`, `exotic-ld`, `h5py`
    and `pytest`;
 4. registers the Jupyter kernel **KeplerBOIs (.venv)**.
 
@@ -113,8 +125,10 @@ running the script, or change the clone's `origin` afterwards.
    install them from GitHub first when it is used outside the workspace.
 2. Check the package name is free on PyPI (`pip index versions <name>`) even
    if we never publish, so `pip` can never pull in someone else's package.
-   (That is why injections installs as `boi-injections`.)
-3. Add it to `REPOS` and, if it should be installed, `INSTALL` in
+   That is why the packages are named `boi-<name>`: `injections` was taken.
+3. Name its test files uniquely (`tests/test_boi_<name>.py`, not
+   `tests/test_import.py`), so pytest can run every repo's tests together.
+4. Add it to `REPOS` and, if it should be installed, `INSTALL` in
    `setup_workspace.sh`, and to the tables above.
 
 A repo that needs versions of something that conflict with the rest (for

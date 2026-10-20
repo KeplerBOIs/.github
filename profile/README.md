@@ -18,9 +18,15 @@ Our proof of concept, **BOI-1.01**, is a sub-Neptune candidate. Its G = 17.8 hos
 | **Project Board** | Active task tracking, assignments, and pipeline milestones | [View Project Board](https://github.com/orgs/KeplerBOIs/projects) |
 | **Organization Wiki** | Central documentation, data-access guides, and meeting notes | [Open Master Wiki](https://github.com/KeplerBOIs/.github/wiki) |
 | **`kbonus-data` Repo** | Reading, downloading and indexing the Kbonus light curves by quarter and channel | [Go to Repository](https://github.com/KeplerBOIs/kbonus-data) |
+| **`stellar-characterization` Repo** | Uniform stellar parameters for every Kbonus star | [Go to Repository](https://github.com/KeplerBOIs/stellar-characterization) |
 | **`preconditioning` Repo** | Source code, issues, and PCA detrending routines | [Go to Repository](https://github.com/KeplerBOIs/preconditioning) |
 | **`preconditioning` Wiki** | Pipeline-specific mathematical notes and benchmarks | [Preconditioning Wiki](https://github.com/KeplerBOIs/preconditioning/wiki) |
+| **`transit-search` Repo** | Matched-filter, BLS and single-event transit searches | [Go to Repository](https://github.com/KeplerBOIs/transit-search) |
+| **`transit-vetting` Repo** | Uniform flux- and pixel-level vetting of detections | [Go to Repository](https://github.com/KeplerBOIs/transit-vetting) |
+| **`transit-modelling` Repo** | Transit fits and parameter posteriors for candidates | [Go to Repository](https://github.com/KeplerBOIs/transit-modelling) |
 | **`injections` Repo** | Injection, inverted and scrambled light curve tests for completeness and reliability | [Go to Repository](https://github.com/KeplerBOIs/injections) |
+| **`exoplanet-catalogues` Repo** | The multi-transit BOI and long-period catalogues | [Go to Repository](https://github.com/KeplerBOIs/exoplanet-catalogues) |
+| **`demographics` Repo** | Planet occurrence rates for FGK and M dwarf hosts | [Go to Repository](https://github.com/KeplerBOIs/demographics) |
 | **`Kepler-BOI1b` Repo** | The BOI-1b proof-of-concept analysis | [Go to Repository](https://github.com/KeplerBOIs/Kepler-BOI1b) |
 
 ## Getting started

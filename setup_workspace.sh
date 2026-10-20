@@ -19,14 +19,24 @@ KERNEL_DISPLAY="KeplerBOIs (.venv)"
 REPOS=(
     ".github=$ORG/.github.git"
     "kbonus-data=$ORG/kbonus-data.git"
+    "stellar-characterization=$ORG/stellar-characterization.git"
     "preconditioning=$ORG/preconditioning.git"
+    "transit-search=$ORG/transit-search.git"
+    "transit-vetting=$ORG/transit-vetting.git"
+    "transit-modelling=$ORG/transit-modelling.git"
     "injections=$ORG/injections.git"
+    "exoplanet-catalogues=$ORG/exoplanet-catalogues.git"
+    "demographics=$ORG/demographics.git"
     "Kepler-BOI1b=$ORG/Kepler-BOI1b.git"
     "bls_cuda=https://github.com/jasonfrowe/bls_cuda.git"
 )
 # repos installed editable into the environment, in dependency order
 # (directory[extras]); others are cloned only
-INSTALL=("bls_cuda" "kbonus-data[test]" "preconditioning" "injections[test]")
+INSTALL=(
+    "bls_cuda" "kbonus-data[test]" "stellar-characterization[test]" "preconditioning"
+    "transit-search[test]" "transit-vetting[test]" "transit-modelling[test]"
+    "injections[test]" "exoplanet-catalogues[test]" "demographics[test]"
+)
 # needed by notebooks rather than by any one package; exotic-ld imports
 # pkg_resources, which setuptools 81 and later no longer provide
 EXTRAS=(ipykernel matplotlib exotic-ld h5py pytest "setuptools<81")
