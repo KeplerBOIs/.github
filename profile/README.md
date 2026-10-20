@@ -17,8 +17,27 @@ Our proof of concept, **BOI-1.01**, is a sub-Neptune candidate. Its G = 17.8 hos
 | :--- | :--- | :--- |
 | **Project Board** | Active task tracking, assignments, and pipeline milestones | [View Project Board](https://github.com/orgs/KeplerBOIs/projects) |
 | **Organization Wiki** | Central documentation, data-access guides, and meeting notes | [Open Master Wiki](https://github.com/KeplerBOIs/.github/wiki) |
+| **`kbonus-data` Repo** | Reading, downloading and indexing the Kbonus light curves by quarter and channel | [Go to Repository](https://github.com/KeplerBOIs/kbonus-data) |
 | **`preconditioning` Repo** | Source code, issues, and PCA detrending routines | [Go to Repository](https://github.com/KeplerBOIs/preconditioning) |
 | **`preconditioning` Wiki** | Pipeline-specific mathematical notes and benchmarks | [Preconditioning Wiki](https://github.com/KeplerBOIs/preconditioning/wiki) |
+| **`injections` Repo** | Injection, inverted and scrambled light curve tests for completeness and reliability | [Go to Repository](https://github.com/KeplerBOIs/injections) |
+| **`Kepler-BOI1b` Repo** | The BOI-1b proof-of-concept analysis | [Go to Repository](https://github.com/KeplerBOIs/Kepler-BOI1b) |
+
+## Getting started
+
+We work in one shared workspace: the repos cloned side by side and installed
+into a single Python environment with one Jupyter kernel.
+
+```sh
+mkdir BOIs && cd BOIs
+curl -O https://raw.githubusercontent.com/KeplerBOIs/.github/main/setup_workspace.sh
+bash setup_workspace.sh
+source .venv/bin/activate
+```
+
+The [workspace guide](https://github.com/KeplerBOIs/.github#readme) explains
+the layout, daily use, pointing the code at the light curves
+(`KBONUS_DATA_DIR`), and how to add a repo.
 
 ## Planned products
 
@@ -54,7 +73,7 @@ flowchart LR
 
 ## Open science
 
-* All software is MIT licensed, developed in the open on GitHub, and released on PyPI where it makes sense.
+* All software is licensed under the GNU GPL v3.0 (GPL-3.0), developed on GitHub, and released on PyPI where it makes sense.
 * The exact software version behind each paper is archived on **Zenodo** with a DOI.
 * Catalogs are released as **Parquet** and as journal machine-readable tables. Period posteriors and other supplementary products are released as CSV on Zenodo.
 * Papers will be published open access.
